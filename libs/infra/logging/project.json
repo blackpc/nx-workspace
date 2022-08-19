@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/infra/logging/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/infra/logging",
+        "tsConfig": "libs/infra/logging/tsconfig.lib.json",
+        "packageJson": "libs/infra/logging/package.json",
+        "main": "libs/infra/logging/src/index.ts",
+        "assets": ["libs/infra/logging/*.md"]
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs infra-logging {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/infra/logging/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/infra/logging"],
+      "options": {
+        "jestConfig": "libs/infra/logging/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

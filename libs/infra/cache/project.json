@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/infra/cache/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/infra/cache",
+        "tsConfig": "libs/infra/cache/tsconfig.lib.json",
+        "packageJson": "libs/infra/cache/package.json",
+        "main": "libs/infra/cache/src/index.ts",
+        "assets": ["libs/infra/cache/*.md"]
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs infra-cache {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/infra/cache/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/infra/cache"],
+      "options": {
+        "jestConfig": "libs/infra/cache/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

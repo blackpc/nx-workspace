@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "bo": "apps/bo",
+    "infra-cache": "libs/infra/cache",
+    "infra-config": "libs/infra/config",
+    "infra-logging": "libs/infra/logging",
+    "sdk": "libs/domain/sdk"
+  }
+}

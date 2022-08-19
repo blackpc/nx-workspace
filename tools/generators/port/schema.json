@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "port",
+  "type": "object",
+  "properties": {
+    "layer": {
+      "type": "string",
+      "enum": ["model", "service", "app", "infra"],
+      "title": "Architecture layer",
+      "description": "One of the DDD layers. Model, service and infra will create a buildable and publishable package inside libs/LAYER_NAME/ directory. The app layer will create an app within apps/ direction",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    }
+  },
+  "required": ["layer"]
+}
