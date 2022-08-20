@@ -1,3 +1,4 @@
+import { SdkService } from '@enso/sdk';
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { AppController } from './app.controller';
@@ -8,14 +9,14 @@ describe('AppController', () => {
   beforeAll(async () => {
     app = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [SdkService],
     }).compile();
   });
 
-  describe('getData', () => {
-    it('should return "Welcome to enso!"', () => {
+  describe('getVersion', () => {
+    it('should return version 0.1.2', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({ message: 'Welcome to enso!' });
+      expect(appController.getVersion()).toEqual('0.1.2');
     });
   });
 });

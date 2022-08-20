@@ -6,6 +6,6 @@ export class SdkService {
    * Gets SDK version
    */
   public version(): string {
-    return '1.0.1';
+    return '0.1.2';
   }
 }
