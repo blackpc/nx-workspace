@@ -36,8 +36,7 @@
         "style": "styled-components"
       },
       "library": {
-        "style": "styled-components",
-        "linter": "eslint"
+        "buildable": true
       }
     }
   }

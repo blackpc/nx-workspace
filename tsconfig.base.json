@@ -19,7 +19,8 @@
       "@enso/infra-config": ["libs/infra/config/src/index.ts"],
       "@enso/infra/logging": ["libs/infra/logging/src/index.ts"],
       "@enso/sdk": ["libs/domain/sdk/src/index.ts"],
-      "@enso/shipper-api": ["libs/shipper-api/src/index.ts"]
+      "@enso/shipper-api": ["libs/shipper-api/src/index.ts"],
+      "@enso/somelib": ["libs/somelib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

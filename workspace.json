@@ -9,6 +9,7 @@
     "harbor-e2e": "apps/harbor-e2e",
     "logging": "libs/infra/logging",
     "sdk": "libs/domain/sdk",
-    "shipper-api": "libs/shipper-api"
+    "shipper-api": "libs/shipper-api",
+    "somelib": "libs/somelib"
   }
 }
