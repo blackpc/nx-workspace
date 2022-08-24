@@ -1,0 +1,9 @@
+{
+  "changelog": true,
+  "npm": true,
+  "github": true,
+  "repositoryUrl": "https://github.com/igor-enso/nx-workspace.git",
+  "branches": [
+    "master"
+  ]
+}
