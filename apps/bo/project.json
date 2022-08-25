@@ -62,26 +62,6 @@
         "passWithNoTests": true
       }
     },
-    "docker": {
-      "executor": "@nx-tools/nx-docker:build",
-      "options": {
-        "metadata": {
-          "images": [
-            "ghcr.io/igor-enso/nx-workspace/shipper"
-          ],
-          "tags": [
-            "type=schedule",
-            "type=ref,event=branch",
-            "type=ref,event=tag",
-            "type=ref,event=pr",
-            "type=semver,pattern={{version}}",
-            "type=semver,pattern={{major}}.{{minor}}",
-            "type=semver,pattern={{major}}",
-            "type=sha"
-          ]
-        }
-      }
-    },
     "semantic-release": {
       "executor": "@theunderscorer/nx-semantic-release:semantic-release"
     }

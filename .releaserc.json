@@ -5,6 +5,9 @@
   "repositoryUrl": "https://github.com/igor-enso/nx-workspace.git",
   "branches": [
     "master",
-    "develop"
+    {
+      "name": "develop",
+      "prerelease": true
+    }
   ]
 }

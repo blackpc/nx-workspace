@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
+    "@codedependant/semantic-release-docker": "^4.1.0",
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
     "@nestjs/schematics": "^9.0.0",
