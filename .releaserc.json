@@ -1,9 +1,13 @@
 {
   "changelog": true,
-  "npm": true,
+  "npm": false,
   "github": true,
   "repositoryUrl": "https://github.com/igor-enso/nx-workspace.git",
   "branches": [
-    "master"
+    "master",
+    {
+      "name": "develop",
+      "prerelease": true
+    }
   ]
 }

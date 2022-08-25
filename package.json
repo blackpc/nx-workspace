@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "prepare": "husky install || true"
+    "prepare": "husky install"
   },
   "repository": {
     "url": "https://github.com/igor-enso/nx-workspace"
