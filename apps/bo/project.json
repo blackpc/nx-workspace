@@ -62,8 +62,24 @@
         "passWithNoTests": true
       }
     },
-    "semantic-release": {
-      "executor": "@theunderscorer/nx-semantic-release:semantic-release"
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": false,
+        "load": true,
+        "tags": [
+          "igor-enso/bo"
+        ]
+      }
+    },
+    "release": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "npx semantic-release-plus"
+        ],
+        "cwd": "apps/bo/"
+      }
     }
   },
   "tags": []
