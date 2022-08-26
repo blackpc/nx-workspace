@@ -17,7 +17,6 @@ jobs:
         working-directory: ${{ github.workspace }}
     runs-on: ubuntu-latest
     env:
-      # INPUT_PUSH: ${{ github.event_name != 'pull_request' }}
       INPUT_CACHE_FROM: type=registry,ref=ghcr.io/igor-enso/nx-workspace/shipper:buildcache
       INPUT_CACHE_TO: type=registry,ref=ghcr.io/igor-enso/nx-workspace/shipper:buildcache,mode=max
     steps:
@@ -74,13 +73,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: npx nx affected --target=docker
-        env:
-          INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release
         if: ${{ success() && (github.event_name != 'pull_request' || github.event.action == 'closed' && github.event.pull_request.merged == true) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx nx affected --target release --all

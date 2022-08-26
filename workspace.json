@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "bo": "apps/bo",
+    "bo-core": "libs/bo-core",
     "cache": "libs/infra/cache",
     "config": "libs/infra/config",
     "harbor": "apps/harbor",

@@ -63,6 +63,12 @@
       }
     },
     "docker": {
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        }
+      ],
       "executor": "@nx-tools/nx-docker:build",
       "options": {
         "push": false,
@@ -73,6 +79,12 @@
       }
     },
     "release": {
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "docker"
+        }
+      ],
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [

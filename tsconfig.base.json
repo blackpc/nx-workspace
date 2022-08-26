@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@enso/bo-core": ["libs/bo-core/src/index.ts"],
       "@enso/cache": ["libs/infra/cache/src/index.ts"],
       "@enso/infra-config": ["libs/infra/config/src/index.ts"],
       "@enso/infra/logging": ["libs/infra/logging/src/index.ts"],

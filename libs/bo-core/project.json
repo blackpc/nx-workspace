@@ -1,0 +1,59 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/bo-core/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/bo-core",
+        "tsConfig": "libs/bo-core/tsconfig.lib.json",
+        "packageJson": "libs/bo-core/package.json",
+        "main": "libs/bo-core/src/index.ts",
+        "assets": [
+          "libs/bo-core/*.md"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/bo-core/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/bo-core"
+      ],
+      "options": {
+        "jestConfig": "libs/bo-core/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "release": {
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        }
+      ],
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "npx semantic-release-plus"
+        ],
+        "cwd": "libs/bo-core/"
+      }
+    }
+  },
+  "tags": []
+}

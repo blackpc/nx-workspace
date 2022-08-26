@@ -1,0 +1,8 @@
+{
+  "name": "@enso/bo-core",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "repository": {
+    "url": "https://github.com/igor-enso/bo-core"
+  }
+}
