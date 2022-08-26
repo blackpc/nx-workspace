@@ -9,11 +9,7 @@
     "prepare": "husky install"
   },
   "repository": {
-    "url": "https://github.com/igor-enso/nx-workspace"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "tag": "latest"
+    "url": "https://github.com/blackpc/nx-workspace"
   },
   "private": true,
   "dependencies": {
