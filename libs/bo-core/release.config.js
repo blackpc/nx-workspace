@@ -4,7 +4,7 @@ const pathToRepoRoot = '../..';
 
 module.exports = {
   extends: `${pathToRepoRoot}/release.config.base.js`,
-  pkgRoot: `${pathToRepoRoot}/dist/${srcRoot}`,
+  pkgRoot: `${pathToRepoRoot}/dist/libs/${srcRoot}`,
   npmPublish: true,
   tagFormat: name + '-v${version}',
   plugins: [
